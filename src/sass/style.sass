@@ -489,8 +489,77 @@ button
       font-size: 1.2rem
 // End of VIDEO
 
+// PLACES
+.place
+  &__container
+    grid-template-columns: repeat(2, max-content)
+    justify-content: center
 
+  &__card,
+  &__img
+    height: 230px
 
+  &__card
+    position: relative
+    overflow: $img-hidden
+
+    &:hover .place__img
+      -ms-transform: $img-scale
+      transform: $img-scale
+
+  &__content,
+  &__title
+    color: $white-color
+
+  &__content
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    padding: .75rem .75rem 1rem
+
+  &__rating
+    align-self: flex-end
+    display: flex
+    align-items: center
+
+    &-icon
+      font-size: .75rem
+      margin-right: $m-0-25
+
+    &-number
+      font-size: $small-font-size
+
+  &__subtitle,
+  &__price
+    display: block
+
+  &__title
+    font-size: $h3-font-size
+    margin-bottom: $m-0-25
+
+  &__subtitle
+    font-size: $smaller-font-size
+    margin-bottom: $m-1-25
+
+  &__button
+    position: absolute
+    right: 0
+    bottom: 0
+    padding: .75rem 1rem
+
+  &__img
+    -webkit-transition: $img-transition
+    -moz-transition: $img-transition
+    -ms-transition: $img-transition
+    -o-transition: $img-transition
+    transition: $img-transition
+
+// End of PLACES
 
 
 
