@@ -45,3 +45,54 @@ let swiper = new Swiper(".discover__container", {
     rotate: 0,
   },
 })
+
+// VIDEO
+const videoFile = document.getElementById('video-file')
+const videoButton = document.getElementById('video-button')
+const videoIcon = document.getElementById('video-icon')
+
+function playPause() {
+  if (videoFile.paused) {
+    videoFile.play()
+    videoIcon.classList.remove('ri-play-line')
+    videoIcon.classList.add('ri-pause-line')
+  } else {
+    videoFile.pause()
+    videoIcon.classList.add('ri-play-line')
+    videoIcon.classList.remove('ri-pause-line')
+  }
+}
+
+videoButton.addEventListener('click', playPause)
+
+function finalVideo() {
+  videoIcon.classList.remove('ri-pause-line')
+  videoIcon.classList.add('ri-play-line')
+}
+
+videoFile.addEventListener('ended', finalVideo)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
