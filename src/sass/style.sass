@@ -592,6 +592,28 @@ button
 
 // End of SUBSCRIBE
 
+// SPONSORS
+.sponsor
+  &__container
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr))
+    justify-items: center
+    row-gap: 3.5rem
+
+  &__img
+    display: block
+    width: 90px
+    -webkit-transition:  $img-transition
+    -moz-transition:  $img-transition
+    -ms-transition:  $img-transition
+    -o-transition:  $img-transition
+    transition:  $img-transition
+    filter: invert(.7)
+
+    &:hover
+      -ms-transform: $img-scale
+      transform: $img-scale
+      filter: invert(.5)
+
 
 
 
