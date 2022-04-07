@@ -325,8 +325,48 @@ button
   &__info-img:hover
     -ms-transform: $img-scale
     transform: $img-scale
+// End of HOME
 
+// ABOUT
+.about
+  &__data
+    text-align: center
 
+  &__container
+    row-gap: 2.5rem
+
+  &__description
+    margin-bottom: $m-2
+
+  &__img
+    display: flex
+    -webkit-column-gap: 1rem
+    -moz-column-gap: 1rem
+    column-gap: 1rem
+    align-items: center
+    justify-content: center
+
+    &-overlay
+      overflow: $img-hidden
+
+    &-one
+      width: 130px
+
+    &-two
+      width: 180px
+
+    &-one,
+    &-two
+      -webkit-transition: $img-transition
+      -moz-transition: $img-transition
+      -ms-transition: $img-transition
+      -o-transition: $img-transition
+      transition: $img-transition
+
+      &:hover
+        -ms-transform: $img-scale
+        transform: $img-scale
+// End of ABOUT
 
 
 
