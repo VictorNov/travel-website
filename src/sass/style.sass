@@ -368,6 +368,48 @@ button
         transform: $img-scale
 // End of ABOUT
 
+// DISCOVER
+
+.discover
+  &__card
+    position: relative
+    width: 200px
+    height: max-content
+    overflow: $img-hidden
+
+  &__data
+    position: absolute
+    bottom: 1.5rem
+    left: 1rem
+
+  &__title,
+  &__description
+    color: $white-color
+
+  &__title
+    font-size: $h3-font-size
+    margin-bottom: $m-0-25
+
+  &__description
+    display: block
+    font-size: $smaller-font-size
+
+  &__img
+    -webkit-transition:  $img-transition
+    -moz-transition:  $img-transition
+    -ms-transition:  $img-transition
+    -o-transition:  $img-transition
+    transition:  $img-transition
+    
+    &:hover
+      -ms-transform: $img-scale
+      transform: $img-scale
+
+.swiper-container-3d .swiper-slide-shadow-left,
+.swiper-container-3d .swiper-slide-shadow-right
+  background-image: none
+
+
 
 
 
