@@ -3,32 +3,45 @@
 
 $header-height: 3rem
 
-// Цвета темы
-// Можно скорректировать цвета 190 - темно-зеленый 171 - зеленый 200 - зелено-голубой
-$hue: 190
+\:root
+  // Цвета темы
+  // Можно скорректировать цвета 190 - темно-зеленый 171 - зеленый 200 - зелено-голубой
+  --hue: 190
 
-$first-color: hsl($hue, 64%, 22%)
-$first-color-second: hsl($hue, 64%, 22%)
-$first-color-alt: hsl($hue, 64%, 15%)
-$title-color: hsl($hue, 64%, 18%)
-$text-color: hsl($hue, 24%, 35%)
-$text-color-light: hsl($hue, 8%, 60%)
-$input-color: hsl($hue, 24%, 97%)
-$body-color: hsl($hue, 100%, 99%)
-$white-color: #FFF
-$scroll-bar-color: hsl($hue, 12%, 90%)
-$scroll-thumb-color: hsl($hue, 12%, 75%)
+  --first-color: hsl(var(--hue), 64%, 22%)
+  --first-color-second: hsl(var(--hue), 64%, 22%)
+  --first-color-alt: hsl(var(--hue), 64%, 15%)
+  --title-color: hsl(var(--hue), 64%, 18%)
+  --text-color: hsl(var(--hue), 24%, 35%)
+  --text-color-light: hsl(var(--hue), 8%, 60%)
+  --input-color: hsl(var(--hue), 24%, 97%)
+  --body-color: hsl(var(--hue), 100%, 99%)
+  --white-color: #FFF
+  --scroll-bar-color: hsl(var(--hue), 12%, 90%)
+  --scroll-thumb-color: hsl(var(--hue), 12%, 75%)
+
+  --biggest-font-size: 2.5rem
+  --h1-font-size: 1.5rem
+  --h2-font-size: 1.25rem
+  --h3-font-size: 1rem
+  --normal-font-size: .938rem
+  --small-font-size: .813rem
+  --smaller-font-size: .75rem
 
 // Шрифты и типографика
 $body-font: 'Open Sans', sans-serif
 $title-font: 'Raleway', sans-serif
-$biggest-font-size: 2.5rem
-$h1-font-size: 1.5rem
-$h2-font-size: 1.25rem
-$h3-font-size: 1rem
-$normal-font-size: .938rem
-$small-font-size: .813rem
-$smaller-font-size: .75rem
+
+// Адаптивная типографика
+@media screen and (min-width: 968px)
+  \:root
+    --biggest-font-size: 4rem
+    --h1-font-size: 2.25rem
+    --h2-font-size: 1.75rem
+    --h3-font-size: 1.25rem
+    --normal-font-size: 1rem
+    --small-font-size: .875rem
+    --smaller-font-size: .813rem
 
 $font-medium: 500
 $font-semi-bold: 600
@@ -52,17 +65,6 @@ $img-transition: .3s
 $img-hidden: hidden
 $img-scale: scale(1.1)
 
-// Адаптивная типографика
-@media screen and (min-width: 968px)
-  $biggest-font-size: 4rem
-  $h1-font-size: 2.25rem
-  $h2-font-size: 1.75rem
-  $h3-font-size: 1.25rem
-  $normal-font-size: 1rem
-  $small-font-size: .875rem
-  $smaller-font-size: .813rem
-
-
 // Базовые настройки
 *
   -webkit-box-sizing: border-box
@@ -77,12 +79,12 @@ html
 body
   margin: $header-height 0 0 0
   font-family: $body-font
-  font-size: $normal-font-size
-  background-color: $body-color
-  color: $text-color
+  font-size: var(--normal-font-size)
+  background-color: var(--body-color)
+  color: var(--text-color)
 
 h1, h2, h3
-  color: $title-color
+  color: var(--title-color)
   font-weight: $font-semi-bold
   font-family: $title-font
 
@@ -102,18 +104,28 @@ input
   border: none
   outline: none
   font-family: $body-font
-  font-size: $normal-font-size
+  font-size: var(--normal-font-size)
 
 button
   cursor: pointer
+
+// Dark theme
+body.dark-theme
+  --first-color-second: hsl(var(--hue), 54%, 12%)
+  --title-color: hsl(var(--hue), 24%, 95%)
+  --text-color: hsl(var(--hue), 8%, 75%)
+  --input-color: hsl(var(--hue), 29%, 16%)
+  --body-color: hsl(var(--hue), 29%, 12%)
+  --scroll-bar-color: hsl(var(--hue), 12%, 48%)
+  --scroll-thumb-color: hsl(var(--hue), 12%, 36%)
 
 // Универсальные CSS классы
 .section
   padding: 4.5rem 0 2.5rem
 
 .section-title
-  font-size: $h2-font-size
-  color: $title-color
+  font-size: var(--h2-font-size)
+  color: var(--title-color)
   text-align: center
   text-transform: capitalize
   margin-bottom: $m-2
@@ -130,8 +142,8 @@ button
 // Buttons
 .button
   display: inline-block
-  background-color: $first-color
-  color: $white-color
+  background-color: var(--first-color)
+  color: var(--white-color)
   padding: 1rem 2rem
   font-weight: $font-semi-bold
   -webkit-transition: .3s
@@ -141,7 +153,7 @@ button
   transition: .3s
 
   &:hover
-    background-color: $first-color-alt
+    background-color: var(--first-color-alt)
 
   &--flex
     display: flex
@@ -172,13 +184,13 @@ button
   transition: .4s
 
 .scroll-header
-  background-color: $body-color
-  -webkit-box-shadow: 0 0 4px hsla($hue, 64%, 15%, .15)
-  -moz-box-shadow: 0 0 4px hsla($hue, 64%, 15%, .15)
-  box-shadow: 0 0 4px hsla($hue, 64%, 15%, .15)
+  background-color: var(--body-color)
+  -webkit-box-shadow: 0 0 4px hsla(var(--hue), 64%, 15%, .15)
+  -moz-box-shadow: 0 0 4px hsla(var(--hue), 64%, 15%, .15)
+  box-shadow: 0 0 4px hsla(var(--hue), 64%, 15%, .15)
   .nav__logo,
   .nav__toggle
-    color: $title-color
+    color: var(--title-color)
 
 // end of Header
 
@@ -191,7 +203,7 @@ button
 
   &__logo,
   &__toggle
-    color: $white-color
+    color: var(--white-color)
 
   &__logo
     font-weight: $font-semi-bold
@@ -206,14 +218,14 @@ button
   @media screen and (max-width: 767px)
     &__menu
       position: fixed
-      background-color: $body-color
+      background-color: var(--body-color)
       top: 0
       right: -100%
       width: 70%
       height: 100%
-      -webkit-box-shadow:  -1px 0 4px hsla($hue, 64%, 15%, .15)
-      -moz-box-shadow:  -1px 0 4px hsla($hue, 64%, 15%, .15)
-      box-shadow:  -1px 0 4px hsla($hue, 64%, 15%, .15)
+      -webkit-box-shadow:  -1px 0 4px hsla(var(--hue), 64%, 15%, .15)
+      -moz-box-shadow:  -1px 0 4px hsla(var(--hue), 64%, 15%, .15)
+      box-shadow:  -1px 0 4px hsla(var(--hue), 64%, 15%, .15)
       padding: 3rem
       -webkit-transition: .4s
       -moz-transition: .4s
@@ -231,20 +243,55 @@ button
     row-gap: 2.5rem
 
   &__link
-    color: $text-color-light
+    color: var(--text-color-light)
     font-weight: $font-semi-bold
     text-transform: uppercase
 
   &__link:hover
-    color: $text-color
+    color: var(--text-color)
+
+  &__dark
+    display: flex
+    align-items: center
+    -webkit-column-gap: 2rem
+    -moz-column-gap: 2rem
+    column-gap: 2rem
+    position: absolute
+    left: 3rem
+    bottom: 4rem
 
   &__close
     position: absolute
     top: .75rem
     right: 1rem
     font-size: 1.5rem
-    color: $title-color
+    color: var(--title-color)
     cursor: pointer
+
+.active-link
+  position: relative
+  color: var(--title-color)
+
+  &::before
+    content: ''
+    position: absolute
+    background-color: var(--title-color)
+    width: 100%
+    height: 2px
+    bottom: -.75rem
+    left: 0
+
+.change-theme,
+.change-theme-name
+  color: var(--text-color)
+
+.change-theme
+  cursor: pointer
+  font-size: 1rem
+
+.change-theme-name
+  font-size: var(--small-font-size)
+
 // End of NAV
 
 // HOME
@@ -268,7 +315,7 @@ button
   &__data-title,
   &__social-link,
   &__info
-    color: $white-color
+    color: var(--white-color)
 
   &__data-subtitle
     display: block
@@ -276,7 +323,7 @@ button
     margin-bottom: $m-0-75
 
   &__data-title
-    font-size: $biggest-font-size
+    font-size: var(--biggest-font-size)
     font-weight: $font-medium
     margin-bottom: $m-2-5
 
@@ -290,7 +337,7 @@ button
     width: max-content
 
   &__info
-    background-color: $first-color
+    background-color: var(--first-color)
     display: flex
     padding: 1.5rem 1rem
     align-items: center
@@ -304,12 +351,12 @@ button
 
   &__info-title
     display: block
-    font-size: $small-font-size
+    font-size: var(--small-font-size)
     font-weight: $font-semi-bold
     margin-bottom: $m-0-75
 
   &__info-button
-    font-size: $smaller-font-size
+    font-size: var(--smaller-font-size)
 
   &__info-overlay
     overflow: $img-hidden
@@ -386,15 +433,15 @@ button
 
   &__title,
   &__description
-    color: $white-color
+    color: var(--white-color)
 
   &__title
-    font-size: $h3-font-size
+    font-size: var(--h3-font-size)
     margin-bottom: $m-0-25
 
   &__description
     display: block
-    font-size: $smaller-font-size
+    font-size: var(--smaller-font-size)
 
   &__img
     -webkit-transition:  $img-transition
@@ -430,12 +477,12 @@ button
     padding: 0 2rem
 
   &__number
-    font-size: $h2-font-size
+    font-size: var(--h2-font-size)
     font-weight: $font-semi-bold
     margin-bottom: $m-0-5
 
   &__description
-    font-size: $small-font-size
+    font-size: var(--small-font-size)
 
   &__img
     position: relative
@@ -509,7 +556,7 @@ button
 
   &__content,
   &__title
-    color: $white-color
+    color: var(--white-color)
 
   &__content
     position: absolute
@@ -532,18 +579,18 @@ button
       margin-right: $m-0-25
 
     &-number
-      font-size: $small-font-size
+      font-size: var(--small-font-size)
 
   &__subtitle,
   &__price
     display: block
 
   &__title
-    font-size: $h3-font-size
+    font-size: var(--h3-font-size)
     margin-bottom: $m-0-25
 
   &__subtitle
-    font-size: $smaller-font-size
+    font-size: var(--smaller-font-size)
     margin-bottom: $m-1-25
 
   &__button
@@ -564,19 +611,19 @@ button
 // SUBSCRIBE
 .subscribe
   &__bg
-    background-color: $first-color
+    background-color: var(--first-color)
     padding: 2.5rem 0
 
   &__title,
   &__description
-    color: $white-color
+    color: var(--white-color)
 
   &__description
     text-align: center
     margin-bottom: $m-2-5
 
   &__form
-    background-color: $input-color
+    background-color: var(--input-color)
     padding: .5rem
     display: flex
     justify-content: space-between
@@ -584,11 +631,11 @@ button
   &__input
     width: 70%
     padding-right: .5rem
-    background-color: $input-color
-    color: $text-color
+    background-color: var(--input-color)
+    color: var(--text-color)
 
     &::placeholder
-      color: $text-color
+      color: var(--text-color)
 
 // End of SUBSCRIBE
 
@@ -627,7 +674,7 @@ button
 
   &__title,
   &__subtitle
-    font-size: $h3-font-size
+    font-size: var(--h3-font-size)
 
   &__title
     margin-bottom: $m-0-5
@@ -640,17 +687,17 @@ button
 
   &__social
     font-size: 1.25rem
-    color: $title-color
+    color: var(--title-color)
     margin-right: $m-1-25
 
   &__item
     margin-bottom: $m-0-75
 
   &__link
-    color: $text-color
+    color: var(--text-color)
 
     &:hover
-      color: $title-color
+      color: var(--title-color)
 
   &__rights
     display: flex
@@ -660,8 +707,8 @@ button
 
   &__copy,
   &__terms-link
-    font-size: $small-font-size
-    color: $text-color-light
+    font-size: var(--small-font-size)
+    color: var(--text-color-light)
 
   &__terms
     display: flex
@@ -671,11 +718,87 @@ button
     justify-content: center
 
     &-link:hover
-      color: $text-color
+      color: var(--text-color)
 
 // End of FOOTER
 
+// SCROLL UP
+.scrollup
+  position: fixed
+  right: 1rem
+  bottom: -20%
+  background-color: var(--first-color)
+  padding: .5rem
+  display: flex
+  opacity: .9
+  color: var(--white-color)
+  z-index: $z-tooltip
+  -webkit-transition: .4s
+  -moz-transition: .4s
+  -ms-transition: .4s
+  -o-transition: .4s
+  transition: .4s
 
+  &:hover
+    background-color: var(--first-color-alt)
+    opacity: 1
+
+.show-scroll
+  bottom: 5rem
+
+// End of SCROLL UP
+
+// SCROLLBAR
+::-webkit-scrollbar
+  width: .6rem
+  background-color: var(--scroll-bar-color)
+
+  &-thumb
+    background-color: var(--scroll-thumb-color)
+
+    &:hover
+      background-color: var(--text-color-light)
+// End of SCROLLBAR
+
+// Медиазапросы
+// Small devices
+@media screen and (max-width: 340px)
+  .place__container
+    grid-template-columns: max-content
+    justify-content: center
+
+  .experience
+    &__content
+      padding: 0
+    &__overlay
+      &:nth-child(1)
+        width: 190px
+      &:nth-child(2)
+        width: 80px
+    &__img
+      padding: 0
+
+  .home
+    &__info
+      width: 190px
+      padding: 1rem
+
+  .about
+    &__img
+      &-one
+        width: 80px
+      &-two
+        width: 130px
+
+  .video
+    &__container
+      padding: 0
+
+  .subscribe
+    &__form
+      flex-direction: column
+    &__input
+      padding: 1rem 1rem 1rem 0
 
 
 
