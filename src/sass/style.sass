@@ -614,6 +614,67 @@ button
       transform: $img-scale
       filter: invert(.5)
 
+// End of SPONSORS
+
+// FOOTER
+.footer
+  &__container
+    row-gap: 5rem
+
+  &__content
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr))
+    row-gap: 2rem
+
+  &__title,
+  &__subtitle
+    font-size: $h3-font-size
+
+  &__title
+    margin-bottom: $m-0-5
+
+  &__subtitle
+    margin-bottom: $m-1
+
+  &__description
+    margin-bottom: $m-2
+
+  &__social
+    font-size: 1.25rem
+    color: $title-color
+    margin-right: $m-1-25
+
+  &__item
+    margin-bottom: $m-0-75
+
+  &__link
+    color: $text-color
+
+    &:hover
+      color: $title-color
+
+  &__rights
+    display: flex
+    flex-direction: column
+    row-gap: 1.5rem
+    text-align: center
+
+  &__copy,
+  &__terms-link
+    font-size: $small-font-size
+    color: $text-color-light
+
+  &__terms
+    display: flex
+    -webkit-column-gap: 1.5rem
+    -moz-column-gap: 1.5rem
+    column-gap: 1.5rem
+    justify-content: center
+
+    &-link:hover
+      color: $text-color
+
+// End of FOOTER
+
 
 
 
