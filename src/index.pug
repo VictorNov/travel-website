@@ -1,9 +1,12 @@
 doctype html
-html
+html(lang="ru")
   head
     include ./pug_modules/_head
 
   body
-    h1 Basic template
+    include ./pug_modules/_header
+
+    main.main
+      include ./pug_modules/_home
 
     script(src="js/app.min.js")

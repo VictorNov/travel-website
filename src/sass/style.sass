@@ -1,1 +1,352 @@
 //@import fonts
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@500;600;700&display=swap')
+
+$header-height: 3rem
+
+// Цвета темы
+// Можно скорректировать цвета 190 - темно-зеленый 171 - зеленый 200 - зелено-голубой
+$hue: 190
+
+$first-color: hsl($hue, 64%, 22%)
+$first-color-second: hsl($hue, 64%, 22%)
+$first-color-alt: hsl($hue, 64%, 15%)
+$title-color: hsl($hue, 64%, 18%)
+$text-color: hsl($hue, 24%, 35%)
+$text-color-light: hsl($hue, 8%, 60%)
+$input-color: hsl($hue, 24%, 97%)
+$body-color: hsl($hue, 100%, 99%)
+$white-color: #FFF
+$scroll-bar-color: hsl($hue, 12%, 90%)
+$scroll-thumb-color: hsl($hue, 12%, 75%)
+
+// Шрифты и типографика
+$body-font: 'Open Sans', sans-serif
+$title-font: 'Raleway', sans-serif
+$biggest-font-size: 2.5rem
+$h1-font-size: 1.5rem
+$h2-font-size: 1.25rem
+$h3-font-size: 1rem
+$normal-font-size: .938rem
+$small-font-size: .813rem
+$smaller-font-size: .75rem
+
+$font-medium: 500
+$font-semi-bold: 600
+
+// Отступы
+$m-0-25: .25rem
+$m-0-5: .5rem
+$m-0-75: .75rem
+$m-1: 1rem
+$m-1-25: 1.25rem
+$m-1-5: 1.5rem
+$m-2: 2rem
+$m-2-5: 2.5rem
+
+// Z-index
+$z-tooltip: 10
+$z-fixed: 100
+
+// Hover overlay
+$img-transition: .3s
+$img-hidden: hidden
+$img-scale: scale(1.1)
+
+// Адаптивная типографика
+@media screen and (min-width: 968px)
+  $biggest-font-size: 4rem
+  $h1-font-size: 2.25rem
+  $h2-font-size: 1.75rem
+  $h3-font-size: 1.25rem
+  $normal-font-size: 1rem
+  $small-font-size: .875rem
+  $smaller-font-size: .813rem
+
+
+// Базовые настройки
+*
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  padding: 0
+  margin: 0
+
+html
+  scroll-behavior: smooth
+
+body
+  margin: $header-height 0 0 0
+  font-family: $body-font
+  font-size: $normal-font-size
+  background-color: $body-color
+  color: $text-color
+
+h1, h2, h3
+  color: $title-color
+  font-weight: $font-semi-bold
+  font-family: $title-font
+
+ul
+  list-style: none
+
+a
+  text-decoration: none
+
+img,
+video
+  width: 100%
+  height: auto
+
+button,
+input
+  border: none
+  outline: none
+  font-family: $body-font
+  font-size: $normal-font-size
+
+button
+  cursor: pointer
+
+// Универсальные CSS классы
+.section
+  padding: 4.5rem 0 2.5rem
+
+.section-title
+  font-size: $h2-font-size
+  color: $title-color
+  text-align: center
+  text-transform: capitalize
+  margin-bottom: $m-2
+
+.container
+  max-width: 968px
+  margin-left: $m-1
+  margin-right: $m-1
+
+.grid
+  display: grid
+  gap: 1.5rem
+
+// Buttons
+.button
+  display: inline-block
+  background-color: $first-color
+  color: $white-color
+  padding: 1rem 2rem
+  font-weight: $font-semi-bold
+  -webkit-transition: .3s
+  -moz-transition: .3s
+  -ms-transition: .3s
+  -o-transition: .3s
+  transition: .3s
+
+  &:hover
+    background-color: $first-color-alt
+
+  &--flex
+    display: flex
+    align-items: center
+    -webkit-column-gap: .25rem
+    -moz-column-gap: .25rem
+    column-gap: .25rem
+
+  &--link
+    background: none
+    padding: 0
+
+    &:hover
+      background: none
+
+// Header
+.header
+  width: 100%
+  position: fixed
+  top: 0
+  left: 0
+  z-index: $z-fixed
+  background-color: transparent
+  -webkit-transition: .4s
+  -moz-transition: .4s
+  -ms-transition: .4s
+  -o-transition: .4s
+  transition: .4s
+
+.scroll-header
+  background-color: $body-color
+  -webkit-box-shadow: 0 0 4px hsla($hue, 64%, 15%, .15)
+  -moz-box-shadow: 0 0 4px hsla($hue, 64%, 15%, .15)
+  box-shadow: 0 0 4px hsla($hue, 64%, 15%, .15)
+  .nav__logo,
+  .nav__toggle
+    color: $title-color
+
+// end of Header
+
+// Nav
+.nav
+  height: $header-height
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+  &__logo,
+  &__toggle
+    color: $white-color
+
+  &__logo
+    font-weight: $font-semi-bold
+
+  &__toggle
+    font-size: 1.2rem
+    cursor: pointer
+
+  &__menu
+    position: relative
+
+  @media screen and (max-width: 767px)
+    &__menu
+      position: fixed
+      background-color: $body-color
+      top: 0
+      right: -100%
+      width: 70%
+      height: 100%
+      -webkit-box-shadow:  -1px 0 4px hsla($hue, 64%, 15%, .15)
+      -moz-box-shadow:  -1px 0 4px hsla($hue, 64%, 15%, .15)
+      box-shadow:  -1px 0 4px hsla($hue, 64%, 15%, .15)
+      padding: 3rem
+      -webkit-transition: .4s
+      -moz-transition: .4s
+      -ms-transition: .4s
+      -o-transition: .4s
+      transition: .4s
+
+    // Показать меню
+    .show-menu
+      right: 0
+
+  &__list
+    display: flex
+    flex-direction: column
+    row-gap: 2.5rem
+
+  &__link
+    color: $text-color-light
+    font-weight: $font-semi-bold
+    text-transform: uppercase
+
+  &__link:hover
+    color: $text-color
+
+  &__close
+    position: absolute
+    top: .75rem
+    right: 1rem
+    font-size: 1.5rem
+    color: $title-color
+    cursor: pointer
+// End of NAV
+
+// HOME
+.home
+  &__img
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100vh
+    object-fit: cover
+    object-position: 83%
+
+  &__container
+    position: relative
+    height: calc(100vh - 3rem)
+    align-content: center
+    row-gap: 3rem
+
+  &__data-subtitle,
+  &__data-title,
+  &__social-link,
+  &__info
+    color: $white-color
+
+  &__data-subtitle
+    display: block
+    font-weight: $font-semi-bold
+    margin-bottom: $m-0-75
+
+  &__data-title
+    font-size: $biggest-font-size
+    font-weight: $font-medium
+    margin-bottom: $m-2-5
+
+  &__social
+    display: flex
+    flex-direction: column
+    row-gap: 1.5rem
+
+  &__social-link
+    font-size: 1.2rem
+    width: max-content
+
+  &__info
+    background-color: $first-color
+    display: flex
+    padding: 1.5rem 1rem
+    align-items: center
+    -webkit-column-gap: .5rem
+    -moz-column-gap: .5rem
+    column-gap: .5rem
+    position: absolute
+    right: 0
+    bottom: 1rem
+    width: 228px
+
+  &__info-title
+    display: block
+    font-size: $small-font-size
+    font-weight: $font-semi-bold
+    margin-bottom: $m-0-75
+
+  &__info-button
+    font-size: $smaller-font-size
+
+  &__info-overlay
+    overflow: $img-hidden
+
+  &__info-img
+    width: 145px
+    -webkit-transition: $img-transition
+    -moz-transition: $img-transition
+    -ms-transition: $img-transition
+    -o-transition: $img-transition
+    transition: $img-transition
+
+  &__info-img:hover
+    -ms-transform: $img-scale
+    transform: $img-scale
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
