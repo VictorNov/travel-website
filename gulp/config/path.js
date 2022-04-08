@@ -37,5 +37,5 @@ export const path = {
   buildFolder: buildFolder,
   srcFolder: srcFolder,
   rootFolder: rootFolder,
-  ftp: `./domains/victor-nov.ru/public_html/test`,
+  ftp: `./domains/victor-nov.ru/public_html`,
 }
