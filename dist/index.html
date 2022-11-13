@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="assets/img/favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css?_v=20221113174951" rel="stylesheet">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css?_v=20221113174951">
+    <link rel="stylesheet" href="css/style.min.css?_v=20221113174951">
+    <title>Тревел агентство</title>
+  </head>
+  <body>
+    <header class="header" id="header">
+      <nav class="nav container"><a class="nav__logo" href="#">Travel</a>
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li class="nav__item"><a class="nav__link active-link" href="#home">Главная</a></li>
+            <li class="nav__item"><a class="nav__link" href="#about">О нас</a></li>
+            <li class="nav__item"><a class="nav__link" href="#discover">Исследуй</a></li>
+            <li class="nav__item"><a class="nav__link" href="#place">Направления</a></li>
+          </ul>
+          <div class="nav__dark"><span class="change-theme-name">Темный режим</span><i class="ri-moon-line change-theme" id="theme-button"></i></div><i class="ri-close-line nav__close" id="nav-close"></i>
+        </div>
+        <div class="nav__toggle" id="nav-toggle"><i class="ri-function-line"></i></div>
+      </nav>
+    </header>
+    <main class="main">
+      <section class="home" id="home"><picture><source srcset="assets/img/home1.webp" type="image/webp"><img class="home__img" src="assets/img/home1.jpg" alt=""></picture>
+        <div class="home__container container grid">
+          <div class="home__data"><span class="home__data-subtitle">Открой для себя</span>
+            <h1 class="home__data-title">Лучшие <br><b>Тропические <br> пляжи</b></h1><a class="button" href="#discover">Найти</a>
+          </div>
+          <div class="home__social"><a class="home__social-link" href="https://www.facebook.com/" target="_blank"><i class="ri-facebook-box-fill"></i></a><a class="home__social-link" href="https://www.instagram.com/" target="_blank"><i class="ri-instagram-fill"></i></a><a class="home__social-link" href="https://twitter.com/" target="_blank"><i class="ri-twitter-fill"></i></a></div>
+          <div class="home__info">
+            <div><span class="home__info-title">5 лучших направлений</span><a class="button button--flex button--link home__info-button" href="#">Больше<i class="ri-arrow-right-line"></i></a></div>
+            <div class="home__info-overlay"><picture><source srcset="assets/img/home2.webp" type="image/webp"><img class="home__info-img" src="assets/img/home2.jpg" alt=""></picture></div>
+          </div>
+        </div>
+      </section>
+      <section class="about section" id="about">
+        <div class="about__container container grid">
+          <div class="about__data">
+            <h2 class="section-title about__title">Больше Информации <br> О Лучших Пляжах</h2>
+            <p class="about__description">
+              Найдите самые прекрасные места по лучшим ценам
+              со специальными скидками. Вы выбираете направление –
+              Мы полностью организуем вашу поездку.
+              Не ждите лучшего времени, зарезервируйте тур прямо сейчас!
+            </p><a class="button" href="#">Зарезервировать тур</a>
+          </div>
+          <div class="about__img">
+            <div class="about__img-overlay"><picture><source srcset="assets/img/about1.webp" type="image/webp"><img class="about__img-one" src="assets/img/about1.jpg" alt=""></picture></div>
+            <div class="about__img-overlay"><picture><source srcset="assets/img/about2.webp" type="image/webp"><img class="about__img-two" src="assets/img/about2.jpg" alt=""></picture></div>
+          </div>
+        </div>
+      </section>
+      <section class="discover section" id="discover">
+        <h2 class="section-title">Исследуйте самые <br> привлекательные направления</h2>
+        <div class="discover__container container swiper">
+          <div class="swiper-wrapper">
+            <div class="discover__card swiper-slide"><picture><source srcset="assets/img/discover1.webp" type="image/webp"><img class="discover__img" src="assets/img/discover1.jpg" alt=""></picture>
+              <div class="discover__data">
+                <h3 class="discover__title">Бали</h3><span class="discover__description">24 тура доступны</span>
+              </div>
+            </div>
+            <div class="discover__card swiper-slide"><picture><source srcset="assets/img/discover2.webp" type="image/webp"><img class="discover__img" src="assets/img/discover2.jpg" alt=""></picture>
+              <div class="discover__data">
+                <h3 class="discover__title">Гавайи</h3><span class="discover__description">15 туров доступны</span>
+              </div>
+            </div>
+            <div class="discover__card swiper-slide"><picture><source srcset="assets/img/discover3.webp" type="image/webp"><img class="discover__img" src="assets/img/discover3.jpg" alt=""></picture>
+              <div class="discover__data">
+                <h3 class="discover__title">Хвар</h3><span class="discover__description">18 туров доступны</span>
+              </div>
+            </div>
+            <div class="discover__card swiper-slide"><picture><source srcset="assets/img/discover4.webp" type="image/webp"><img class="discover__img" src="assets/img/discover4.jpg" alt=""></picture>
+              <div class="discover__data">
+                <h3 class="discover__title">Уайтхейвен</h3><span class="discover__description">32 тура доступны</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="experience section">
+        <h2 class="section-title">Имеем Огромный Опыт <br> В Организации Туров</h2>
+        <div class="experience__container container grid">
+          <div class="experience__content grid">
+            <div class="experience__data">
+              <h2 class="experience__number">20</h2><span class="experience__description">Лет <br> В Бизнесе</span>
+            </div>
+            <div class="experience__data">
+              <h2 class="experience__number">75</h2><span class="experience__description">Совершенных <br> Туров</span>
+            </div>
+            <div class="experience__data">
+              <h2 class="experience__number">650+</h2><span class="experience__description">Туристических <br> Направлений</span>
+            </div>
+          </div>
+          <div class="experience__img grid">
+            <div class="experience__overlay"><picture><source srcset="assets/img/experience1.webp" type="image/webp"><img class="experience__img-one" src="assets/img/experience1.jpg" alt=""></picture></div>
+            <div class="experience__overlay"><picture><source srcset="assets/img/experience2.webp" type="image/webp"><img class="experience__img-two" src="assets/img/experience2.jpg" alt=""></picture></div>
+          </div>
+        </div>
+      </section>
+      <section class="video section">
+        <h2 class="section-title">Видео-тур</h2>
+        <div class="video__container container">
+          <p class="video__description">
+            Ознакомьтесь с нашей видеопрезентацией лучших
+            туристических направлений для вас и вашей семьи.
+          </p>
+          <div class="video__content">
+            <video id="video-file">
+              <source src="assets/video/video.mp4" type="video/mp4">
+            </video>
+            <button class="button button--flex video__button" id="video-button"><i class="ri-play-line video__button-icon" id="video-icon"></i></button>
+          </div>
+        </div>
+      </section>
+      <section class="place section" id="place">
+        <h2 class="section-title">Выбери Свое Направление</h2>
+        <div class="place__container container grid">
+          <div class="place__card"><picture><source srcset="assets/img/place1.webp" type="image/webp"><img class="place__img" src="assets/img/place1.jpg" alt=""></picture>
+            <div class="place__content"><span class="place__rating"><i class="ri-star-line place__rating-icon"></i><span class="place__rating-number">4,8</span></span>
+              <div class="place__data">
+                <h3 class="place__title">Бали</h3><span class="place__subtitle">Индонезия</span><span class="place__price">$2499</span>
+              </div>
+            </div>
+            <button class="button button--flex place__button"><i class="ri-arrow-right-line"></i></button>
+          </div>
+          <div class="place__card"><picture><source srcset="assets/img/place2.webp" type="image/webp"><img class="place__img" src="assets/img/place2.jpg" alt=""></picture>
+            <div class="place__content"><span class="place__rating"><i class="ri-star-line place__rating-icon"></i><span class="place__rating-number">5,0</span></span>
+              <div class="place__data">
+                <h3 class="place__title">Бора Бора</h3><span class="place__subtitle">Полинезия</span><span class="place__price">$1599</span>
+              </div>
+            </div>
+            <button class="button button--flex place__button"><i class="ri-arrow-right-line"></i></button>
+          </div>
+          <div class="place__card"><picture><source srcset="assets/img/place3.webp" type="image/webp"><img class="place__img" src="assets/img/place3.jpg" alt=""></picture>
+            <div class="place__content"><span class="place__rating"><i class="ri-star-line place__rating-icon"></i><span class="place__rating-number">4,9</span></span>
+              <div class="place__data">
+                <h3 class="place__title">Гавайи</h3><span class="place__subtitle">США</span><span class="place__price">$3499</span>
+              </div>
+            </div>
+            <button class="button button--flex place__button"><i class="ri-arrow-right-line"></i></button>
+          </div>
+          <div class="place__card"><picture><source srcset="assets/img/place4.webp" type="image/webp"><img class="place__img" src="assets/img/place4.jpg" alt=""></picture>
+            <div class="place__content"><span class="place__rating"><i class="ri-star-line place__rating-icon"></i><span class="place__rating-number">4,8</span></span>
+              <div class="place__data">
+                <h3 class="place__title">Уайтхейвен</h3><span class="place__subtitle">Австралия</span><span class="place__price">$2499</span>
+              </div>
+            </div>
+            <button class="button button--flex place__button"><i class="ri-arrow-right-line"></i></button>
+          </div>
+          <div class="place__card"><picture><source srcset="assets/img/place5.webp" type="image/webp"><img class="place__img" src="assets/img/place5.jpg" alt=""></picture>
+            <div class="place__content"><span class="place__rating"><i class="ri-star-line place__rating-icon"></i><span class="place__rating-number">4,8</span></span>
+              <div class="place__data">
+                <h3 class="place__title">Хвар</h3><span class="place__subtitle">Хорватия</span><span class="place__price">$1999</span>
+              </div>
+            </div>
+            <button class="button button--flex place__button"><i class="ri-arrow-right-line"></i></button>
+          </div>
+        </div>
+      </section>
+      <section class="subscribe section">
+        <div class="subscribe__bg">
+          <div class="subscribe__container container">
+            <h2 class="section-title subscribe__title">Подпишитесь <br> На Наши Новости</h2>
+            <p class="subscribe__description">Подпишитесь на нашу новостную рассылку и получите персональную <b>скидку 30%</b> на любой из туров.</p>
+            <form class="subscribe__form">
+              <input class="subscribe__input" type="text" placeholder="Ваш e-mail">
+              <button class="button">Подписаться</button>
+            </form>
+          </div>
+        </div>
+      </section>
+      <section class="sponsor section">
+        <div class="sponsor__container container grid"><picture><source srcset="assets/img/sponsors1.webp" type="image/webp"><img class="sponsor__img" src="assets/img/sponsors1.png" alt=""></picture><picture><source srcset="assets/img/sponsors2.webp" type="image/webp"><img class="sponsor__img" src="assets/img/sponsors2.png" alt=""></picture><picture><source srcset="assets/img/sponsors3.webp" type="image/webp"><img class="sponsor__img" src="assets/img/sponsors3.png" alt=""></picture><picture><source srcset="assets/img/sponsors4.webp" type="image/webp"><img class="sponsor__img" src="assets/img/sponsors4.png" alt=""></picture><picture><source srcset="assets/img/sponsors5.webp" type="image/webp"><img class="sponsor__img" src="assets/img/sponsors5.png" alt=""></picture></div>
+      </section>
+    </main>
+    <footer class="footer section">
+      <div class="footer__container container grid">
+        <div class="footer__content grid">
+          <div class="footer__data">
+            <h3 class="footer__title">Travel</h3>
+            <p class="footer__description">Travel – вы выбираете <br> направление, мы предлагаем <br> воплощение мечты.</p>
+            <div><a class="footer__social" href="https://www.facebook.com/" target="_blank"><i class="ri-facebook-box-fill"></i></a><a class="footer__social" href="https://twitter.com/" target="_blank"><i class="ri-twitter-fill"></i></a><a class="footer__social" href="https://www.youtube.com/" target="_blank"><i class="ri-instagram-fill"></i></a><a class="footer__social" href="https://www.facebook.com/" target="_blank"><i class="ri-youtube-fill"></i></a></div>
+          </div>
+          <div class="footer__data">
+            <h3 class="footer__subtitle">О нас</h3>
+            <ul>
+              <li class="footer__item"><a class="footer__link" href="#">Кто Мы</a></li>
+              <li class="footer__item"><a class="footer__link" href="#">Наши Преимущества</a></li>
+              <li class="footer__item"><a class="footer__link" href="#">Новости</a></li>
+            </ul>
+          </div>
+          <div class="footer__data">
+            <h3 class="footer__subtitle">Компания</h3>
+            <ul>
+              <li class="footer__item"><a class="footer__link" href="#">Наша Команда</a></li>
+              <li class="footer__item"><a class="footer__link" href="#">Планы и Цены</a></li>
+              <li class="footer__item"><a class="footer__link" href="#">Стать Клиентом</a></li>
+            </ul>
+          </div>
+          <div class="footer__data">
+            <h3 class="footer__subtitle">Поддержка</h3>
+            <ul>
+              <li class="footer__item"><a class="footer__link" href="#">Частые Вопросы</a></li>
+              <li class="footer__item"><a class="footer__link" href="#">Центр Поддержки</a></li>
+              <li class="footer__item"><a class="footer__link" href="#">Контакты</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__rights">
+          <p class="footer__copy">2022 Victor Nov. Pet project</p>
+          <div class="footer__terms"><a class="footer__terms-link" href="#">Пользовательское соглашение</a><a class="footer__terms-link" href="#">Политика конфиденциальности</a></div>
+        </div>
+      </div>
+    </footer><a class="scrollup" id="scroll-up" href="#"><i class="ri-arrow-up-line scrollup__icon"></i></a>
+    <script src="js/swiper-bundle.min.js?_v=20221113174951"></script>
+    <script src="js/scrollreveal.min.js?_v=20221113174951"></script>
+    <script src="js/app.min.js?_v=20221113174951"></script>
+  </body>
+</html>
